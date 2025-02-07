@@ -5,7 +5,7 @@ export const HOME_URL = '/home';
 export const LOGIN_URL = '/login';
 
 // 默认主题颜色
-export const DEFAULT_PRIMARY = '#E4633B';
+export const DEFAULT_PRIMARY = '#43BB80';
 
 // 路由白名单地址（必须是本地存在的路由 staticRouter.ts 中）
 export const ROUTER_WHITE_LIST: string[] = ['/login'];
@@ -22,8 +22,8 @@ Object.keys(moduleFiles).forEach(name => {
 const TSDD_CONFIG = window.TSDD_CONFIG ? window.TSDD_CONFIG : {};
 // 默认应用配置
 export const BU_DOU_CONFIG = {
-  APP_TITLE: '唐僧叨叨后台管理',
-  APP_TITLE_SHORT: '唐',
+  APP_TITLE: 'IM业务后台管理',
+  APP_TITLE_SHORT: 'IM',
   ...modules[process.env.APP_ENV as any],
   ...TSDD_CONFIG
   // APP_URL: '/api/v1/' // 正式环境地址 (通用打包镜像，用此相对地址)

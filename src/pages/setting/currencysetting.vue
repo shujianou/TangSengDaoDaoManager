@@ -17,6 +17,12 @@
                 <el-radio :label="0">不加入</el-radio>
               </el-radio-group>
             </el-form-item>
+            <el-form-item label="允许APP修改API地址：">
+              <el-radio-group v-model="formData.can_modify_api_url">
+                <el-radio :label="1">允许</el-radio>
+                <el-radio :label="0">不允许</el-radio>
+              </el-radio-group>
+            </el-form-item>
             <el-form-item label="消息可撤回时长：">
               <el-select v-model="formData.revoke_second" class="!w-100%">
                 <el-option label="1分钟" :value="60" />
@@ -60,7 +66,8 @@ const formData = reactive({
   welcome_message: '欢迎你来到悟空聊天。',
   revoke_second: 60,
   new_user_join_system_group: 1,
-  search_by_phone: 1
+  search_by_phone: 1,
+  can_modify_api_url: 0
 });
 //  初始化数据
 const initData = () => {
@@ -69,6 +76,7 @@ const initData = () => {
     formData.revoke_second = res.revoke_second;
     formData.new_user_join_system_group = res.new_user_join_system_group;
     formData.search_by_phone = res.search_by_phone;
+    formData.can_modify_api_url = res.can_modify_api_url || 0;
   });
 };
 

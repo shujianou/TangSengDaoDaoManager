@@ -38,7 +38,7 @@ const getPlugins = (_command?: string) => {
     createHtmlPlugin({
       inject: {
         data: {
-          title: '唐僧叨叨后台管理',
+          title: 'IM业务后台管理',
           injectScript: process.env.IS_CONFIG ? `<script src="/tsdd-config.js"></script>` : null
         }
       }
@@ -60,7 +60,11 @@ const getPlugins = (_command?: string) => {
 };
 
 export default defineConfig(({ command }: ConfigEnv): UserConfig => {
+  const BASE_URL = command === 'serve' ? '' : '/im/manager';
+  const API_BASE_URL = command === 'serve' ? '/api/v1/' : '/im/manager/api/v1/';
+  
   return {
+    base: BASE_URL,
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
@@ -69,7 +73,9 @@ export default defineConfig(({ command }: ConfigEnv): UserConfig => {
     },
     define: {
       'process.env': {
-        APP_ENV: process.env.APP_ENV
+        APP_ENV: process.env.APP_ENV,
+        API_BASE_URL: JSON.stringify(API_BASE_URL),
+        BASE_URL: JSON.stringify(BASE_URL)
       }
     },
     plugins: getPlugins(command),

@@ -87,3 +87,12 @@ export function messageUserDevices(params: any) {
     params
   });
 }
+
+// 批量添加违禁词
+export function messageProhibitWordsBatchPost(data: any) {
+  return request({
+    url: '/manager/message/prohibit_words/batch',
+    method: 'post',
+    data
+  });
+}

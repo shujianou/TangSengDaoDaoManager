@@ -4,7 +4,7 @@
       <AssemblySize id="assemblySize" />
       <Language id="language" />
       <Fullscreen id="fullscreen" />
-      <ThemeSetting id="themeSetting" />
+      <!-- <ThemeSetting id="themeSetting" /> -->
     </div>
     <Avatar id="avatar" />
   </div>
@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import AssemblySize from './components/AssemblySize.vue';
 import Language from './components/Language.vue';
-import ThemeSetting from './components/ThemeSetting.vue';
+// import ThemeSetting from './components/ThemeSetting.vue';
 import Fullscreen from './components/Fullscreen.vue';
 import Avatar from './components/Avatar.vue';
 </script>

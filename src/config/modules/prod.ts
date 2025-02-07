@@ -1,4 +1,5 @@
 export default {
   APP_ENV: 'prod',
-  APP_URL: '/api/v1/'
+  APP_URL: '/im/manager/api/v1/',
+  BASE_URL: '/im/manager'
 };

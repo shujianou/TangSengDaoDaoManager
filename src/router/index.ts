@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useUserStore } from '@/stores/modules/user';
 import { useAuthStore } from '@/stores/modules/auth';
 import { LOGIN_URL, ROUTER_WHITE_LIST } from '@/config';
+import { BU_DOU_CONFIG } from '@/config';
 import routes from './routers';
 import NProgress from '@/utils/nprogress';
 /**
@@ -21,7 +22,7 @@ import NProgress from '@/utils/nprogress';
  * @param meta.isKeepAlive ==> 是否缓存
  * */
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(BU_DOU_CONFIG.BASE_URL),
   routes,
   strict: false,
   scrollBehavior: () => ({ left: 0, top: 0 })
